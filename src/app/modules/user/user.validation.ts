@@ -3,9 +3,12 @@ import { z } from 'zod';
 const createUserSchema = z.object({
   body: z.object({
     name: z.string().min(1, 'Name is required'),
+    userName: z.string().min(1, 'User Name is required'),
     email: z.string().email('Invalid email address'),
-    phone: z.string(),
-    password: z.string().min(8, 'Password must have at least 8 characters'),
+    phone: z.string().optional(),
+    age: z.number().min(1, 'Age is required'),
+    bio: z.string().min(1, 'Bio is required'),
+    password: z.string().min(4, 'Password must have at least 4 characters'),
   }),
 });
 
@@ -15,14 +18,11 @@ const createUserSchema = z.object({
 const updateUserProfileSchema = z.object({
   body: z.object({
     name: z.string().optional(),
+    userName: z.string().optional(),
     phone: z.string().optional(),
-    country: z.string().optional(),
-    injury: z.string().optional(),
+    password: z.string().optional(),
     age: z.number().optional(),
-    height: z.number().optional(),
-    weight: z.number().optional(),
-    gender: z.enum(['MALE', 'FEMALE', 'OTHERS']).optional(),
-    fitnessLevel: z.enum(['BASIC', 'INTERMEDIATE', 'ADVANCED']).optional(),
+    bio: z.string().optional(),
   }),
 });
 

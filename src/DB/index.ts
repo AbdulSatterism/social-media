@@ -12,6 +12,8 @@ const superUser = {
   phone: '14524578',
   verified: true,
   gender: 'MALE',
+  age: 30,
+  bio: 'Administrator of the system',
 };
 
 const seedAdmin = async () => {

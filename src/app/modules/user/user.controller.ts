@@ -76,18 +76,15 @@ const getSingleUser = catchAsync(async (req: Request, res: Response) => {
 
 // search by phone number
 const searchByPhone = catchAsync(async (req: Request, res: Response) => {
-  const searchTerm = req.query.searchTerm;
+  const searchTerm = req.query.search;
   const userId = req?.user?.id;
 
-  const result = await UserService.searchUserByPhone(
-    searchTerm as string,
-    userId,
-  );
+  const result = await UserService.searchUser(searchTerm as string, userId);
 
   sendResponse(res, {
     success: true,
     statusCode: StatusCodes.OK,
-    message: 'get user by searching phone number',
+    message: 'get user by searching ',
     data: result,
   });
 });

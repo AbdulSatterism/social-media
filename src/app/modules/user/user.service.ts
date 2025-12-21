@@ -122,12 +122,17 @@ const getSingleUser = async (id: string): Promise<IUser | null> => {
 };
 
 // search user by phone
-const searchUserByPhone = async (searchTerm: string, userId: string) => {
+const searchUser = async (searchTerm: string, userId: string) => {
   let result;
 
   if (searchTerm) {
     result = await User.find({
-      phone: { $regex: searchTerm, $options: 'i' },
+      $or: [
+        { name: { $regex: searchTerm, $options: 'i' } },
+        { userName: { $regex: searchTerm, $options: 'i' } },
+        { email: { $regex: searchTerm, $options: 'i' } },
+        { bio: { $regex: searchTerm, $options: 'i' } },
+      ],
       _id: { $ne: userId },
     });
   } else {
@@ -142,6 +147,6 @@ export const UserService = {
   getUserProfileFromDB,
   updateProfileToDB,
   getSingleUser,
-  searchUserByPhone,
+  searchUser,
   getAllUsers,
 };

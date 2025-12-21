@@ -12,6 +12,10 @@ const userSchema = new Schema<IUser, UserModal>(
       type: String,
       required: true,
     },
+    userName: {
+      type: String,
+      required: false,
+    },
     email: {
       type: String,
       required: true,
@@ -22,7 +26,7 @@ const userSchema = new Schema<IUser, UserModal>(
       type: String,
       required: true,
       select: 0,
-      minlength: 8,
+      minlength: 4,
     },
     googleId: {
       type: String,
@@ -35,7 +39,7 @@ const userSchema = new Schema<IUser, UserModal>(
     },
     phone: {
       type: String,
-      required: true,
+      required: false,
     },
     role: {
       type: String,
@@ -43,7 +47,7 @@ const userSchema = new Schema<IUser, UserModal>(
     },
     image: {
       type: String,
-      default: '/default/user.jpg',
+      default: '',
     },
     gender: {
       type: String,
@@ -51,14 +55,11 @@ const userSchema = new Schema<IUser, UserModal>(
     },
     age: {
       type: Number,
+      required: true,
     },
-    payment: {
-      type: Boolean,
-      default: false,
-    },
-    subscription: {
-      type: Boolean,
-      default: false,
+    bio: {
+      type: String,
+      required: true,
     },
     isDeleted: {
       type: Boolean,

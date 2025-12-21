@@ -11,6 +11,7 @@ const router = express.Router();
 
 router.post(
   '/create-user',
+  fileUploadHandler({ image: { fileType: 'images', size: 5 * 1024 * 1024 } }),
   validateRequest(UserValidation.createUserSchema),
   UserController.createUser,
 );
