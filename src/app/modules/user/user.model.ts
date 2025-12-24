@@ -53,14 +53,15 @@ const userSchema = new Schema<IUser, UserModal>(
     gender: {
       type: String,
       enum: ['MALE', 'FEMALE', 'OTHERS'],
+      required: false,
     },
     age: {
       type: Number,
-      required: true,
+      required: false,
     },
     bio: {
       type: String,
-      required: true,
+      required: false,
     },
     isDeleted: {
       type: Boolean,
