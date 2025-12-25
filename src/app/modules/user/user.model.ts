@@ -12,6 +12,11 @@ const userSchema = new Schema<IUser, UserModal>(
       type: String,
       required: true,
     },
+    country: {
+      type: String,
+      required: false,
+      default: '',
+    },
     userName: {
       type: String,
       required: false,

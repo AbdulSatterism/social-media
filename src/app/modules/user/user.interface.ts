@@ -14,6 +14,7 @@ export type IUser = {
   role?: 'ADMIN' | 'USER' | 'AGENT';
   gender?: 'MALE' | 'FEMALE' | 'OTHERS';
   image?: string;
+  country?: string;
   age?: number;
   bio?: string;
   isDeleted?: boolean;

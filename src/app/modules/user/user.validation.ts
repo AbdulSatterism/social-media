@@ -23,6 +23,7 @@ const updateUserProfileSchema = z.object({
     password: z.string().optional(),
     age: z.number().optional(),
     bio: z.string().optional(),
+    country: z.string().optional(),
   }),
 });
 
