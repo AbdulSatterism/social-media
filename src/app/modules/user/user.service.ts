@@ -25,7 +25,7 @@ const createUserFromDb = async (payload: IUser) => {
   const emailValues = {
     name: result.name,
     otp,
-    email: result.email,
+    email: result.email || '',
   };
 
   const accountEmailTemplate = emailTemplate.createAccount(emailValues);

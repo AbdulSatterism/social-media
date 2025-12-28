@@ -24,8 +24,6 @@ const userSchema = new Schema<IUser, UserModal>(
     },
     email: {
       type: String,
-      required: true,
-      unique: true,
       lowercase: true,
     },
     password: {
