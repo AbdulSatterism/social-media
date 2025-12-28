@@ -6,7 +6,7 @@ export type IUser = {
   name: string;
   userName?: string;
   phone?: string;
-  password: string;
+  password?: string;
   email?: string;
   googleId?: string;
   facebookId?: string;

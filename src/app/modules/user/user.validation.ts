@@ -8,7 +8,7 @@ const createUserSchema = z.object({
     phone: z.string().optional(),
     age: z.number().optional(),
     bio: z.string().optional(),
-    password: z.string().min(4, 'Password must have at least 4 characters'),
+    password: z.string().optional(),
   }),
 });
 
